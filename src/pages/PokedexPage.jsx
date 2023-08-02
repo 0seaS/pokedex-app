@@ -11,7 +11,7 @@ const PokedexPage = () => {
   
   const [inputValue, setInputValue] = useState('')
 
-  const [selecValue, setSelecValue] = useState('allPokemon')
+  const [selecValue, setSelecValue] = useState('allPokemons')
 
   console.log(selecValue)
 

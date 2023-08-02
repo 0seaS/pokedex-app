@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import useFetch from "../../hooks/useFetch"
 import { useNavigate } from "react-router-dom"
-
+import './styles/PokeCard.css'
 
 const PokeCard = ({ url }) => {
 
@@ -17,27 +17,29 @@ const PokeCard = ({ url }) => {
     navigate(`/pokedex/${pokemon.id}`)
   }
 
+  const firstType = pokemon?.types[0].type.name
+
   return (
-    <article onClick={handleClick}>
-        <header>
-            <img src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
+    <article className={`pokeCard ${firstType}-border`} onClick={handleClick}>
+        <header className={`pokeCard__header ${firstType}-gradient`}>
+            <img className="pokeCard__image" src={pokemon?.sprites.other['official-artwork'].front_default} alt="" />
         </header>
-        <section>
-            <h3>{pokemon?.name}</h3>
-            <ul>
+        <section className="pokeCard__body">
+            <h3 className={`pokeCard__name ${firstType}-color`}>{pokemon?.name}</h3>
+            <ul className="pokeCard__types">
                 {
                     pokemon?.types.map(typeInfo => (
-                        <li key={typeInfo.type.url}>{typeInfo.type.name}</li>
+                        <li className="pokeCard__typeName" key={typeInfo.type.url}>{typeInfo.type.name}</li>
                     ))
                 }
             </ul>
-            <hr />
-            <ul>
+            <hr className="pokeCard__hr"/>
+            <ul className="pokeCard__stats">
                 {
                     pokemon?.stats.map(statInfo => (
-                        <li key={statInfo.stat.url}>
-                            <h4>{statInfo.stat.name}</h4>
-                            <span>{statInfo.base_stat}</span>
+                        <li className="pokeCard__stat" key={statInfo.stat.url}>
+                            <h4 className="pokeCard__statName">{statInfo.stat.name}</h4>
+                            <span className={`pokeCard__statValue ${firstType}-color`}>{statInfo.base_stat}</span>
                         </li>
                     ))
                 }
