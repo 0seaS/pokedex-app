@@ -3,6 +3,7 @@ import useFetch from "../hooks/useFetch"
 import { useEffect, useRef, useState } from "react"
 import PokeCard from "../components/PokedexPage/PokeCard"
 import SelectType from "../components/PokedexPage/SelectType"
+import './styles/PokedexPage.css'
 
 
 const PokedexPage = () => {
@@ -42,15 +43,21 @@ const PokedexPage = () => {
   console.log(inputValue)
 
   return (
-    <div>
-      <p><span>Welcome {trainer}</span>, here you can find your favorite pokemon</p>
-      <form onSubmit={handleSubmit}>
-        <input ref={inputSearch} type="text"/>
-        <button>Search</button>
+    <div className="pokedex__header">
+      <div className="pokedex__header-image">
+        <div className="pok-red">POKEDEX</div>
+        <div className="pok-black">
+          <div className="pok-button"></div>
+        </div>
+      </div>
+      <p className="pokedex__welcome"><span className="pokedex__user-welcome">Welcome {trainer}</span>, here you can find your favorite pokemon</p>
+      <form className="pokedex__form" onSubmit={handleSubmit}>
+        <input className="pokedex__form-input" ref={inputSearch} type="text"/>
+        <button className="pokedex__form-button">Search</button>
       </form>
       <SelectType
       setSelecValue={setSelecValue}/>
-      <div>
+      <div className="pokedex__pokemon-list">
         {
           pokemons?.results.filter(cbFilter).map(poke => (
             <PokeCard

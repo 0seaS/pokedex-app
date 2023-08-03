@@ -82,6 +82,9 @@
     font-size: 1rem;
 }
 
+
+/**** VARIABLE CARD COLORS  ****/
+
 .fire-gradient{
     background: linear-gradient(176.37deg, #f96d6f -32.26%, #e35825 22.55%, #e8ae1b 125.72%);
 }
@@ -98,7 +101,7 @@
     background: linear-gradient(177.56deg, #62db60 -58.92%, #3bb039 16.57%, #aaffab 209.53%);
 }
 
-/* BORDERS */
+/* BORDER COLORS */
 
 .fire-border{
     border-color: #dc3d02;

@@ -2,6 +2,7 @@ import { useRef } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { setTrainerG } from "../store/slices/trainer.slice"
 import { useNavigate } from "react-router-dom"
+import "./styles/HomePage.css"
 
 
 const HomePage = () => {
@@ -23,14 +24,19 @@ const HomePage = () => {
   }
 
   return (
-    <div>
-      <h1>Pokedex</h1>
-      <h2>hi trainer</h2>
-      <p>To start whit the app, give me your name 😋</p>
+    <div className="helloCard">
+      
+      <img src="/pokelogo.png" alt="" />
+      <h2 className="helloCard__salute">hi trainer</h2>
+      <p>To start whit the app, give me your name</p>
       <form onSubmit={handleSubmit}>
-        <input ref={inputTrainer} type="text" />
-        <button>Gotta catch'em all!</button>
+        <input className="helloCard__input" ref={inputTrainer} type="text" />
+        <button className="helloCard__button">Gotta catch'em all!</button>
       </form>
+
+      <div className="HelloCard__image">
+
+      </div>
     </div>
   )
 }

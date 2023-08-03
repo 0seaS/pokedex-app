@@ -1,0 +1,26 @@
+.helloCard{
+    text-align: center;
+}
+.helloCard > img{
+    max-width: 500px;
+    width: 60%;
+    margin: 3em auto;
+}
+
+.helloCard__salute{
+    color: red;
+}
+
+.helloCard__input{
+    margin-top: 2em;
+    box-shadow: -1px 1px 3px #a8a6a6;
+    border-radius: 7px 0 0 7px;
+    height: 1.8em;
+}
+
+.helloCard__button{
+    background-color: red;
+    height: 2em;
+    color: white;
+    border-radius: 0 7px 7px 0;
+}
