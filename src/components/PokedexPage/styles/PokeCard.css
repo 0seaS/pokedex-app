@@ -107,6 +107,30 @@
     border-color: #dc3d02;
 }
 
+.grass-border{
+    border-color: #7ec6c5;
+}
+
+.water-border{
+    border-color: #133258;
+}
+
+.bug-border{
+    border-color: #62db60;
+}
+
 .fire-color{
     color: #dc3d02;
+}
+
+.grass-color{
+    color: #7ec6c5;
+}
+
+.water-color{
+    color: #133258;
+}
+
+.bug-color{
+    color: #62db60;
 }

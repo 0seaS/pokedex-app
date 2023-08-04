@@ -42,7 +42,7 @@ const PokeIdPage = () => {
             </ul>
           </div>
           <div className="pokemoncard__type-abilities">
-            
+
             <div className="pokemoncard__type">
               <p>Type</p>
               <ul>
@@ -70,7 +70,16 @@ const PokeIdPage = () => {
               <ul className="pokemon__stats-list">
                 {
                   pokemon?.stats.map(res => (
-                    <li key={res.stat.name}><span>{res.stat.name}: </span><span>{res.base_stat}/150</span></li>
+                    <li key={res.stat.name}>
+                      <span>{res.stat.name}: </span>
+                      <span>{res.base_stat}/150</span>
+                      <div className="graphic__container">
+                        <div className="stat__graphic">
+                          <div className="stat__graphic-charge" style={{width: `${res.base_stat*100/150}%`}}></div>
+                        </div>
+                      </div>
+                      
+                    </li>
                   ))
                 }
               </ul>
@@ -86,7 +95,6 @@ const PokeIdPage = () => {
             </ul>
           </div>
         </div>
-      {pokemon?.name}
       </div>
     </>
 
